@@ -1,0 +1,10 @@
+.cache/*
+static/*
+node_modules/*
+public/*
+scripts/*
+config/*
+plop/*
+build/*
+plopfile.js
+setupTests.js

@@ -1,0 +1,78 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended",
+    "@apptension/eslint-config-react",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "plugins": [
+    "react-hooks"
+  ],
+  "rules": {
+    "redux-saga/yield-effects": 0,
+    "react/display-name": 0,
+    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
+    "redux-saga/no-unhandled-errors": 0,
+    // https://github.com/pke/eslint-plugin-redux-saga/issues/15
+    "no-unused-expressions": 0,
+    "react/prop-types": 0,
+    // https://github.com/eslint/eslint/issues/2102
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "internals/**",
+          "**/*.spec.js"
+        ]
+      }
+    ],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "prettier/prettier": "error",
+    "import/extensions": ["error", "ignorePackages", {
+      "js": "never",
+      "jsx": "never",
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "import/dynamic-import-chunkname": 0,
+    "react/jsx-filename-extension": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/explicit-function-return-type": 0
+  },
+  "settings": {
+    "import/core-modules": [
+      "local-env-config",
+      "env-config",
+      "report-error",
+      "json-server",
+      "nock",
+      "inquirer-directory",
+      "utils/testUtils"
+    ],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}
