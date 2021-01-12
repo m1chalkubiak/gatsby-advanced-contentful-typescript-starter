@@ -7,4 +7,6 @@ config/*
 plop/*
 build/*
 plopfile.js
-setupTests.js
+__mocks__/*
+setup-test-env.js
+jest-preprocess.js
