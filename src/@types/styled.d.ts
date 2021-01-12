@@ -1,8 +1,8 @@
 import 'styled-components';
 
-import { Border, Color, Font, Shadow, Size, ZIndex } from './theme.constants';
-import { Breakpoint } from './media';
-import { ThemeMap } from './theme';
+import { Border, Color, Font, Shadow, Size, ZIndex } from '../theme/theme.constants';
+import { Breakpoint } from '../theme/media';
+import { ThemeMap } from '../theme/theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -14,4 +14,6 @@ declare module 'styled-components' {
     zIndexes?: ThemeMap<ZIndex>;
     activeBreakpoint?: Breakpoint;
   }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface DefaultProps {}
 }

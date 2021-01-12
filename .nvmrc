@@ -1,1 +1,2 @@
+# the lower possible version because of stylelint issue https://github.com/stylelint/stylelint/issues/4794
 v10.17.0

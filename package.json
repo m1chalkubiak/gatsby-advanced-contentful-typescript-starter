@@ -19,12 +19,12 @@
     "lint": "yarn run lint:js && yarn run lint:css",
     "lint:css": "stylelint './src/**/*.styles.ts'",
     "lint:js": "eslint .",
-    "storybook": "start-storybook --port 5000",
+    "storybook": "start-storybook",
     "build-storybook": "node ./scripts/build-storybook.js"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^6.1.2",
-    "@storybook/addon-knobs": "^6.1.2",
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/react": "^6.2.0-alpha.5",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@types/color": "^3.0.1",
@@ -38,6 +38,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.5.0",
     "gatsby-plugin-typescript": "^2.7.0",
+    "normalize.css": "^8.0.1",
     "ramda": "^0.27.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -48,7 +49,7 @@
   },
   "devDependencies": {
     "@apptension/eslint-config-react": "^1.0.0",
-    "@storybook/react": "^6.1.4",
+    "babel-loader": "^8.2.2",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",

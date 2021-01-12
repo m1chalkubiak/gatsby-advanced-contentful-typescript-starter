@@ -1,5 +1,5 @@
 import color from 'color';
-import { DefaultTheme, ThemeProps } from 'styled-components';
+import { DefaultTheme, DefaultProps, StyledProps, FlattenInterpolation, ThemedStyledProps } from 'styled-components';
 import { append, compose, flip, identity, ifElse, concat, path, always } from 'ramda';
 import { renderWhenTrue } from '../shared/utils/rendering';
 import { Border, Color, Font, Shadow, Size, ZIndex } from './theme.constants';
@@ -19,15 +19,26 @@ export const themeSize = themeGetter<Size>(['sizes']);
 export const themeColorWithOpacity = (colorId: Color, alpha: number) =>
   compose((value) => color(value).alpha(alpha).string(), themeColor(colorId));
 
-type ThemeValueGetter<T extends DefaultTheme = DefaultTheme, V = any> = (theme: T) => V;
+type PropsValueGetter<T extends DefaultProps = DefaultProps, V = any> = (props: T) => V;
 
-export const styleWhenTrue = <T extends DefaultTheme = DefaultTheme>(
-  getThemeVal: ThemeValueGetter<T, boolean>,
+export const styleWhenTrue = <T extends DefaultProps = DefaultProps>(
+  getVal: PropsValueGetter<T, boolean>,
   styles: any
-) => compose(renderWhenTrue(always(styles)), ({ theme }: ThemeProps<T>) => getThemeVal(theme));
+) => compose(renderWhenTrue(always(styles)), (props: T) => getVal(props));
 
-export const styleWhenEquals = <T extends DefaultTheme = DefaultTheme>(
-  getThemeVal: ThemeValueGetter<T, any>,
+export const styleWhenEquals = <T extends DefaultProps = DefaultProps>(
+  getVal: PropsValueGetter<T, string | boolean | undefined>,
   expectedValue: any,
   styles: any
-) => compose(renderWhenTrue(always(styles)), ({ theme }: ThemeProps<T>) => getThemeVal(theme) === expectedValue);
+) => compose(renderWhenTrue(always(styles)), (props: T) => getVal(props) === expectedValue);
+
+export const styleSwitcher = <T extends Record<string, any>>(
+  property: keyof T,
+  switcherObject: {
+    [key: string]:
+      | string
+      | ((props: { theme: DefaultTheme }) => string)
+      | FlattenInterpolation<StyledProps<T>>
+      | FlattenInterpolation<ThemedStyledProps<any, DefaultTheme>>;
+  }
+) => (props: T) => switcherObject[props[property]] || null;

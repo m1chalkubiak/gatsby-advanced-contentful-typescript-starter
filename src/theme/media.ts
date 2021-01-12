@@ -66,13 +66,3 @@ export const isDesktop = () => {
   const width = getWindowWidth();
   return width >= sizes[Breakpoint.DESKTOP];
 };
-
-export const responsiveValue = <T>(defaultValue: T, config: { [key: string]: T } = {}) => () => {
-  let match = defaultValue;
-  sizesOrdered.forEach((size) => {
-    if (config[size] && window.matchMedia(getBreakpointMediaQuery(size)).matches) {
-      match = config[size];
-    }
-  });
-  return match;
-};

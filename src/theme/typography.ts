@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import { Color, Font } from './theme.constants';
 import { themeColor, themeFont } from './getters';
-
 import LogoSVG from '../images/icons/logo.svg';
 
 export const Logo = styled(LogoSVG)`
