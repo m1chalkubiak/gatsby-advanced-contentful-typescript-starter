@@ -8,5 +8,5 @@ plop/*
 build/*
 plopfile.js
 __mocks__/*
-setup-test-env.js
+src/setupTests.ts
 jest-preprocess.js
