@@ -20,7 +20,8 @@
     "lint:css": "stylelint './src/**/*.styles.ts'",
     "lint:js": "eslint .",
     "storybook": "start-storybook",
-    "build-storybook": "node ./scripts/build-storybook.js"
+    "build-storybook": "node ./scripts/build-storybook.js",
+    "setup": "node ./scripts/setup.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.0",
@@ -66,9 +67,12 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-preset-gatsby": "^0.10.0",
+    "chalk": "^4.1.0",
+    "contentful-import": "^7.9.36",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
+    "inquirer": "^7.3.3",
     "jest": "^26.6.3",
     "prettier": "2.1.2",
     "stylelint": "^13.8.0",
