@@ -71,8 +71,8 @@
           "omitted": false
         },
         {
-          "id": "url",
-          "name": "Url",
+          "id": "slug",
+          "name": "Slug",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -564,7 +564,7 @@
         "menuLabel": {
           "en-US": "About"
         },
-        "url": {
+        "slug": {
           "en-US": "/about"
         },
         "content": {
@@ -622,7 +622,7 @@
         "menuLabel": {
           "en-US": "Contact"
         },
-        "url": {
+        "slug": {
           "en-US": "/contact"
         },
         "content": {

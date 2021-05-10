@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: ${themeFont(Font.PRIMARY)};
   }
+
   *, *:before, *:after {
     box-sizing: inherit;
   }

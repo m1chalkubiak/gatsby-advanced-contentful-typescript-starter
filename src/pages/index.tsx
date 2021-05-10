@@ -6,13 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { Article, H1, Logo } from '../theme/typography';
 import { Users } from '../shared/components/users';
 
-interface IndexProps {
-  site: {
-    buildTime: string;
-  };
-}
-
-const Index: React.FC<PageProps<IndexProps>> = () => {
+const Index: React.FC<PageProps> = () => {
   return (
     <Article>
       <Helmet title="Homepage" />

@@ -5,7 +5,7 @@ import { promiseMiddleware } from '../shared/utils/reduxSagaPromise';
 import createReducer from './reducers';
 import rootSaga from './sagas';
 
-export default function (initialState = {}): Store {
+export default function createStore(initialState = {}): Store {
   const sagaMiddleware = createSagaMiddleware();
 
   const middlewares = [promiseMiddleware, sagaMiddleware];
@@ -20,3 +20,7 @@ export default function (initialState = {}): Store {
 
   return store;
 }
+
+export const store = createStore();
+
+export const dispatch = store.dispatch;
